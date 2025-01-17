@@ -4,9 +4,9 @@
 
     <data>
 
-        <variable
-            name="bookmarked"
-            type="com.northcoders.media_tracker_front.model.Bookmarked" />
+<!--        <variable-->
+<!--            name="bookmarked"-->
+<!--            type="com.northcoders.media_tracker_front.model.Bookmarked" />-->
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/title"
                         android:paddingBottom="8dp"
-                        android:text="@{bookmarked.title}"
+                        android:text=""
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,7 +58,6 @@
                         android:ellipsize="end"
                         android:hint="@string/mock_text"
                         android:maxLines="3"
-                        android:text="@{bookmarked.info}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/bookmarked_fragment_title" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
