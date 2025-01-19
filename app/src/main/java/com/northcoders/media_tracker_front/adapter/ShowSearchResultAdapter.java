@@ -24,6 +24,7 @@ public class ShowSearchResultAdapter extends RecyclerView.Adapter<ShowSearchResu
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
+    // Create the ViewHolder that holds the view for each item
     @NonNull
     @Override
     public ShowSearchResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
@@ -35,17 +36,20 @@ public class ShowSearchResultAdapter extends RecyclerView.Adapter<ShowSearchResu
         return new ShowSearchResultViewHolder(binding, recyclerViewInterface);
     }
 
+    // Bind data to the views in the ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ShowSearchResultAdapter.ShowSearchResultViewHolder holder, int position){
         ShowSearchResult showSearchResult = showSearchResultArrayList.get(position);
         holder.showSearchResultItemBinding.setShowSearchResult(showSearchResult);
     }
 
+    // Return the number of items in the data list
     @Override
     public  int getItemCount(){
         return showSearchResultArrayList.size();
     }
 
+    // Define the ViewHolder class to hold the views for each item
     public static class ShowSearchResultViewHolder extends RecyclerView.ViewHolder{
         private static ShowSearchResultItemBinding showSearchResultItemBinding;
 
