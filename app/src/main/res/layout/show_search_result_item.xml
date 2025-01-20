@@ -10,63 +10,119 @@
             type="com.northcoders.media_tracker_front.model.ShowSearchResult" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:elevation="20dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/search_show_result_name"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="20dp"
-                android:text="@{ShowSearchResult.name}"
-                android:hint="Title"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                />
+            <ImageView
+                android:id="@+id/search_show_result_img"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/vintage_television"
+                android:scaleType="centerCrop"
+                android:src="@drawable/vintage_tv"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/search_show_result_overview"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/search_show_result_name"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/black"
-                android:text="@{ShowSearchResult.overview}"
-                android:hint="Watch History description."
-                android:textSize="10dp"
-                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
 
-            <TextView
-                android:id="@+id/search_show_result_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/search_show_result_name"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/black"
-                android:text="@{ShowSearchResult.first_air_date}"
-                android:hint="rating"
-                android:textSize="10dp"
-                />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_show_result_text_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:text="@{ShowSearchResult.name}"
+                        android:id="@+id/search_show_result_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/title"
+                        android:paddingBottom="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:text="@{ShowSearchResult.overview}"
+                        android:id="@+id/search_show_result_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="@string/mock_text"
+                        android:maxLines="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/search_show_result_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--            add button here? or click on item to see more details? -->
+            </RelativeLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!-- old style
+<androidx.cardview.widget.CardView
+android:elevation="20dp"
+app:cardCornerRadius="20dp"
+android:layout_marginLeft="20dp"
+android:layout_marginRight="20dp"
+android:layout_marginTop="5dp"
+android:layout_marginBottom="5dp"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content" >
+
+
+<TextView
+    android:id="@+id/search_show_result_name"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="136dp"
+    android:layout_marginTop="16dp"
+    android:hint="Title"
+    android:text="@{ShowSearchResult.name}"
+    android:textColor="@color/black"
+    android:textSize="20dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/search_show_result_overview"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/search_show_result_name"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="20dp"
+    android:textColor="@color/black"
+    android:text="@{ShowSearchResult.overview}"
+    android:hint="Watch History description."
+    android:textSize="10dp"
+    />
+
+<TextView
+    android:id="@+id/search_show_result_rating"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginTop="136dp"
+    android:hint="rating"
+    android:text="@{ShowSearchResult.first_air_date}"
+    android:textColor="@color/black"
+    android:textSize="10dp"
+    app:layout_constraintStart_toEndOf="@id/search_show_result_name"
+    app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+    -->
 </layout>
