@@ -1,5 +1,7 @@
 package com.northcoders.media_tracker_front.model;
 
+import androidx.databinding.Bindable;
+
 import java.util.List;
 
 public class Film {
@@ -31,6 +33,7 @@ public class Film {
         this.genres = genres;
     }
 
+    @Bindable
     public Long getId() {
         return id;
     }
@@ -39,6 +42,7 @@ public class Film {
         this.id = id;
     }
 
+    @Bindable
     public String getTitle() {
         return title;
     }
@@ -47,6 +51,7 @@ public class Film {
         this.title = title;
     }
 
+    @Bindable
     public String getSynopsis() {
         return synopsis;
     }
@@ -55,6 +60,7 @@ public class Film {
         this.synopsis = synopsis;
     }
 
+    @Bindable
     public String getDirector() {
         return director;
     }
@@ -63,6 +69,7 @@ public class Film {
         this.director = director;
     }
 
+    @Bindable
     public String getCountry() {
         return country;
     }
@@ -71,6 +78,7 @@ public class Film {
         this.country = country;
     }
 
+    @Bindable
     public String getLanguage() {
         return language;
     }
@@ -79,6 +87,7 @@ public class Film {
         this.language = language;
     }
 
+    @Bindable
     public int getDuration() {
         return duration;
     }
@@ -87,6 +96,7 @@ public class Film {
         this.duration = duration;
     }
 
+    @Bindable
     public int getReleaseYear() {
         return releaseYear;
     }
@@ -95,6 +105,7 @@ public class Film {
         this.releaseYear = releaseYear;
     }
 
+    @Bindable
     public List<String> getGenres() {
         return genres;
     }

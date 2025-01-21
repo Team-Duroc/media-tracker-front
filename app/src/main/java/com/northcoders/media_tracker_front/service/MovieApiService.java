@@ -16,6 +16,9 @@ public interface MovieApiService {
     @GET("shows/search/{searchQuery}")
     Call<List<ShowSearchResult>> getShowSearchResults(@Path("searchQuery") String searchQuery);
 
+    @GET("films/search/{searchQuery}")
+    Call<List<ShowSearchResult>> getMoviesSearchResults(@Path("searchQuery") String searchQuery);
+
     @GET("bookmarked")
     Call<List<Bookmarked>> getBookmarked();
 
